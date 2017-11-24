@@ -4,6 +4,7 @@ import ClickButton from "./components/ClickButton/ClickButton.jsx";
 import UserForm from "./components/UserForm/UserForm.jsx";
 import SignUpDialog from "./components/SignUpDialog/SignUpDialog.jsx";
 import RefsExample from "./components/RefsExample/RefsExample.jsx";
+import Clock from "./components/Clock/Clock.jsx";
 
 const propsValues = {
 	title: "Список смартфонов",
@@ -32,6 +33,7 @@ class DemoProjects extends React.Component {
 	        <UserForm/>
 	        <SignUpDialog/>
 	        <RefsExample/>
+	        <Clock/>
         </div>
         );
     }

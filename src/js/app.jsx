@@ -2,5 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./demo.jsx";
 
-ReactDOM.render(<App/>, document.getElementById("app"));
+const dom = ReactDOM.render(<App/>, document.getElementById("app"));
+console.log(dom);
 
