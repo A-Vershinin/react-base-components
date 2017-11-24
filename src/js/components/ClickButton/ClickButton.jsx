@@ -37,7 +37,7 @@ class ClickButton extends React.Component {
 
 	render() {
 		return (
-			<div style={{marginBottom: "30px", borderTop: "1px solid black", borderBottom: "1px solid black"}}>
+			<div style={{paddingBottom: "30px", borderBottom: "1px solid black"}}>
 				<div style={{fontSie: "20px"}}>Жизнейнный цикл компонента</div>
 				<div>На каждом из этапов вызывается определенная функция, в которой
 					мы можем определить какие-либо действия:</div>

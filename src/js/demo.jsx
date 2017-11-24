@@ -1,6 +1,7 @@
 import React from "react";
 import List from "./components/List/List.jsx";
 import ClickButton from "./components/ClickButton/ClickButton.jsx";
+import UserForm from "./components/UserForm/UserForm.jsx";
 
 const propsValues = {
 	title: "Список смартфонов",
@@ -26,6 +27,7 @@ class DemoProjects extends React.Component {
         <div>
           <List data={propsValues}/>
 	        <ClickButton/>
+	        <UserForm/>
         </div>
         );
     }

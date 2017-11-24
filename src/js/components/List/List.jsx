@@ -40,6 +40,7 @@ class List extends React.Component {
 		return(
 			<div style={{marginBottom: "20px", borderBottom: "1px solid black"}}>
 				<h2>{this.props.data.title}</h2>
+				<div>Поиск по товарам</div>
 				<SearchPlugin filter={this.filterList} />
 				<ul>
 					{
