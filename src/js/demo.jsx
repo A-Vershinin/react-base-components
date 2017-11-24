@@ -5,6 +5,7 @@ import UserForm from "./components/UserForm/UserForm.jsx";
 import SignUpDialog from "./components/SignUpDialog/SignUpDialog.jsx";
 import RefsExample from "./components/RefsExample/RefsExample.jsx";
 import Clock from "./components/Clock/Clock.jsx";
+import FilterableProductTable from "./components/FilterableProductTable/FilterableProductTable.jsx";
 
 const propsValues = {
 	title: "Список смартфонов",
@@ -17,7 +18,6 @@ const propsValues = {
 		"Asus Zenfone 3"
 	]
 };
-
 
 class DemoProjects extends React.Component {
   constructor(props) {
@@ -34,6 +34,7 @@ class DemoProjects extends React.Component {
 	        <SignUpDialog/>
 	        <RefsExample/>
 	        <Clock/>
+	        <FilterableProductTable/>
         </div>
         );
     }
