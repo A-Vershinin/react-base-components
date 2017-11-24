@@ -1,4 +1,19 @@
 import React from "react";
+import List from "./components/List/List.jsx";
+
+
+const propsValues = {
+	title: "Список смартфонов",
+	items: [
+		"HTC U Ultra",
+		"iPhone 7",
+		"Google Pixel",
+		"Hawei P9",
+		"Meizu Pro 6",
+		"Asus Zenfone 3"
+	]
+};
+
 
 class DemoProjects extends React.Component {
   constructor(props) {
@@ -8,7 +23,9 @@ class DemoProjects extends React.Component {
 
   render() {
       return (
-        <div>Hello React</div>
+        <div>
+          <List data={propsValues}/>
+        </div>
         );
     }
 }
