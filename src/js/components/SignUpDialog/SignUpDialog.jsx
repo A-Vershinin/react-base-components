@@ -20,7 +20,7 @@ class Dialog extends React.Component  {
 	}
 	render() {
 		return (
-			<div style={{borderBottom: "1px solid black"}}>
+			<div style={{borderBottom: "1px solid black", marginBottom: "15px"}}>
 				<FancyBorder color="blue">
 					<h1 className="Dialog-title">
 						{this.props.title}
