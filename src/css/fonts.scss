@@ -1,0 +1,18 @@
+
+/* Шрифты */
+/* font-family: "RobotoRegular"; */
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto/RobotoRegular/roboto-regular.woff") format("woff"),
+	url("../fonts/Roboto/RobotoRegular/roboto-regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+/* font-family: "RobotoBold"; */
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto/RobotoBold/roboto-bold.woff") format("woff"),
+	url("../fonts/Roboto/RobotoBold/roboto-bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
