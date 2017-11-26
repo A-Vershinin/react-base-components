@@ -6,6 +6,7 @@ import SignUpDialog from "./components/SignUpDialog/SignUpDialog.jsx";
 import RefsExample from "./components/RefsExample/RefsExample.jsx";
 import Clock from "./components/Clock/Clock.jsx";
 import FilterableProductTable from "./components/FilterableProductTable/FilterableProductTable.jsx";
+import Todo from "./components/Todo/Todo.jsx";
 
 const propsValues = {
 	title: "Список смартфонов",
@@ -29,12 +30,13 @@ class DemoProjects extends React.Component {
       return (
         <div>
           <List data={propsValues}/>
-	        <ClickButton/>
-	        <UserForm/>
-	        <SignUpDialog/>
-	        <RefsExample/>
-	        <Clock/>
-	        <FilterableProductTable/>
+	        {/*<ClickButton/>*/}
+	        {/*<UserForm/>*/}
+	        {/*<SignUpDialog/>*/}
+	        {/*<RefsExample/>*/}
+	        {/*<Clock/>*/}
+	        {/*<FilterableProductTable/>*/}
+	        <Todo/>
         </div>
         );
     }

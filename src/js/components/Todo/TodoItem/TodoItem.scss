@@ -1,0 +1,54 @@
+buttom {
+	width: auto;
+	height: auto;
+}
+.todo-item {
+	padding: 10px 20px;
+	text-align: left;
+	border-top: 1px solid #ccc;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+
+}
+.todo-item .icon {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	height: auto;
+	border-radius: 3px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+.todo-item .todo-title {
+	margin-left: 60px;
+}
+
+.todo-item .delete {
+	display: none;
+	margin-left: auto;
+}
+.todo-item.completed .delete {
+	display: block;
+}
+.todo-item .material-icons{
+	font-size: 30px;
+}
+.todo-item .checkbox i {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+.delete i {
+	right: 30px;
+}
+.todo-item.completed {
+	.todo-title {
+		text-decoration: line-through;
+	}
+}

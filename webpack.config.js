@@ -2,7 +2,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const staticSourcePath = path.join(__dirname, 'static');
+
 
 module.exports = {
 	devServer: {
@@ -39,7 +39,8 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.(png|svg|jpg|gif)$/,
+				// test: /\.(png|svg|jpg|gif)$/,
+				test: /\.(eot|woff|woff2|svg|ttf)$/,
 				use: [
 					'file-loader'
 				]
@@ -49,7 +50,7 @@ module.exports = {
 				use: [
 					'file-loader'
 				]
-			},
+			}
 			// {
 			// 	test: /\.(woff?.+|woff2?.+)$/,
 			// 	use: 'file-loader?name=assets/[name]-[hash].[ext]'
@@ -80,7 +81,7 @@ module.exports = {
 	},
 	resolve: {
 		modules: ['node_modules'],
-		extensions: [".js", ".json", ".jsx", ".css"]
+		extensions: [".js", ".json", ".jsx", ".css", ".scss", ".sass"]
 	},
 	plugins: [
 		new HTMLWebpackPlugin({
@@ -97,6 +98,7 @@ module.exports = {
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'bundle',
 			filename: 'js/bundle.js',
+			children: true,
 			minChunks: 2
 		}),
 		new ExtractTextPlugin({filename: 'css/[name].css'}),
