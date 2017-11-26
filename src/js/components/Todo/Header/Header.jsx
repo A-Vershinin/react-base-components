@@ -1,6 +1,6 @@
 import React from 'react';
 import Stats from "../Stats/Stats";
-
+import Stopwatch from "../Stopwatch/Stopwatch";
 
 class Header extends React.Component {
 	constructor(props) {
@@ -12,6 +12,7 @@ class Header extends React.Component {
 			<header className="todo-header">
 				<Stats todos={this.props.todos}/>
 				<h1>{this.props.title}</h1>
+				<Stopwatch/>
 			</header>
 		)
 	}
