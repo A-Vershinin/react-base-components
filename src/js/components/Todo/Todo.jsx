@@ -12,6 +12,7 @@ class Todo extends React.Component {
 		this.handleStatusChange = this.handleStatusChange.bind(this);
 		this.handleDelete = this.handleDelete.bind(this);
 		this.handleAdd = this.handleAdd.bind(this);
+		this.handleEdit = this.handleEdit.bind(this);
 	}
 
 	handleStatusChange(id) {
@@ -32,7 +33,7 @@ class Todo extends React.Component {
 	nextId() {
 		this._nextId = this._nextId || 4;
 		return this._nextId += 1;
-	}
+	};
 
 	handleAdd(title) {
 		let todo = {
@@ -42,8 +43,17 @@ class Todo extends React.Component {
 		};
 		let todos = [...this.state.todos, todo];
 		this.setState({todos: todos});
-		console.log(title);
-	}
+	};
+
+	handleEdit(id, title) {
+		let todos = this.state.todos.map(todo => {
+			if (todo.id === id) {
+				todo.title = title;
+			}
+			return todo;
+		});
+		this.setState({todos: todos});
+	};
 
 	render() {
 		return (
@@ -54,6 +64,7 @@ class Todo extends React.Component {
 						<TodoItem key={todo.id} id={todo.id} title={todo.title} completed={todo.completed}
 						          onStatusChange={this.handleStatusChange}
 						          onDelete={this.handleDelete}
+						          onEdit={this.handleEdit}
 						/>)
 					}
 					<Form onAdd={this.handleAdd}/>
