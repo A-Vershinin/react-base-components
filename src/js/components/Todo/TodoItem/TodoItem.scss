@@ -3,14 +3,18 @@ buttom {
 	height: auto;
 }
 .todo-item {
-	padding: 10px 20px;
+	position: relative;
+	padding: 20px;
 	text-align: left;
-	border-top: 1px solid #ccc;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-start;
 	align-items: center;
-
+	border: 1px solid #ccc;
+	border-bottom: transparent;
+}
+.todo-item:last-of-type {
+	border-bottom: 1px solid #ccc;
 }
 .todo-item .icon {
 	position: relative;
@@ -43,6 +47,8 @@ buttom {
 .todo-item .delete {
 	display: none;
 	margin-left: auto;
+	position: absolute;
+	right: 20px;
 }
 .todo-item.completed .delete {
 	display: block;

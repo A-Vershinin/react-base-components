@@ -1,8 +1,9 @@
 import React from 'react';
 import "./Todo.scss";
+
 import Header from "./Header/Header";
 import TodoItem from "./TodoItem/TodoItem";
-
+import Form from "./Form/Form";
 
 class Todo extends React.Component {
 	constructor(props) {
@@ -10,6 +11,7 @@ class Todo extends React.Component {
 		this.state = {todos: this.props.initialData};
 		this.handleStatusChange = this.handleStatusChange.bind(this);
 		this.handleDelete = this.handleDelete.bind(this);
+		this.handleAdd = this.handleAdd.bind(this);
 	}
 
 	handleStatusChange(id) {
@@ -27,6 +29,22 @@ class Todo extends React.Component {
 		this.setState({todos: todos});
 	}
 
+	nextId() {
+		this._nextId = this._nextId || 4;
+		return this._nextId += 1;
+	}
+
+	handleAdd(title) {
+		let todo = {
+			id: this.nextId(),
+			title,
+			completed: false
+		};
+		let todos = [...this.state.todos, todo];
+		this.setState({todos: todos});
+		console.log(title);
+	}
+
 	render() {
 		return (
 			<main className="todo-app">
@@ -38,6 +56,7 @@ class Todo extends React.Component {
 						          onDelete={this.handleDelete}
 						/>)
 					}
+					<Form onAdd={this.handleAdd}/>
 				</section>
 			</main>
 		)
