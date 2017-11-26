@@ -13,9 +13,13 @@ class TodoItem extends React.Component {
 	render() {
 		return (
 			<div className={`todo-item ${this.props.completed ? "completed" : ""}`}>
-				<Checkbox className="checkbox icon" initiallyChecked={this.props.completed}/>
+				<Checkbox checked={this.props.completed}
+					// onChange={this.props.onStatusChange.bind(null, this.props.id)}/>
+					// алтернативный вариант привязки контекста с помощью стрел.функции
+								onChange={() => {this.props.onStatusChange(this.props.id)}}/>
 				<span className="todo-title">{this.props.title}</span>
-				<Button className="delete icon" icon="delete"/>
+				<Button className="delete icon" icon="delete"
+				        onClick={() => {this.props.onDelete(this.props.id)}}/>
 			</div>
 		)
 	}
@@ -23,7 +27,9 @@ class TodoItem extends React.Component {
 
 TodoItem.propTypes = {
 	title: React.PropTypes.string.isRequired,
-	completed: React.PropTypes.bool.isRequired
+	completed: React.PropTypes.bool.isRequired,
+	onStatusChange: React.PropTypes.func.isRequired,
+	onDelete: React.PropTypes.func.isRequired,
 };
 
 

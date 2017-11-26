@@ -8,6 +8,7 @@ import Clock from "./components/Clock/Clock.jsx";
 import FilterableProductTable from "./components/FilterableProductTable/FilterableProductTable.jsx";
 import Todo from "./components/Todo/Todo.jsx";
 
+import todos from "./components/Todo/todo.js";
 const propsValues = {
 	title: "Список смартфонов",
 	items: [
@@ -19,6 +20,8 @@ const propsValues = {
 		"Asus Zenfone 3"
 	]
 };
+
+
 
 class DemoProjects extends React.Component {
   constructor(props) {
@@ -36,7 +39,7 @@ class DemoProjects extends React.Component {
 	        {/*<RefsExample/>*/}
 	        {/*<Clock/>*/}
 	        {/*<FilterableProductTable/>*/}
-	        <Todo/>
+	        <Todo initialData={todos}/>
         </div>
         );
     }

@@ -23,6 +23,18 @@ buttom {
 	border: none;
 	outline: none;
 	cursor: pointer;
+	&:active:before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		left: -4px;
+		transform: translateY(-50%);
+		display: block;
+		padding: 20px;
+		border-radius: 50%;
+		background-color: #ababab;
+	}
 }
 .todo-item .todo-title {
 	margin-left: 60px;
