@@ -4,7 +4,6 @@ import Header from "./Header/Header";
 import TodoItem from "./TodoItem/TodoItem";
 
 
-
 class Todo extends React.Component {
 	constructor(props) {
 		super(props);
@@ -31,7 +30,7 @@ class Todo extends React.Component {
 	render() {
 		return (
 			<main className="todo-app">
-				<Header title={this.props.title}/>
+				<Header title={this.props.title} todos={this.state.todos}/>
 				<section className="todo-list">
 					{this.state.todos.map(todo =>
 						<TodoItem key={todo.id} id={todo.id} title={todo.title} completed={todo.completed}

@@ -1,0 +1,22 @@
+.stats {
+	position: absolute;
+	z-index: 40;
+	left: 5%;
+	text-align: right;
+	color: #f4f6f8;
+	font-weight: 700;
+}
+.stats tr {
+	display: block;
+	margin-bottom: 5px;
+}
+.stats tr:last-child {
+	margin-bottom: 0;
+}
+.stats th {
+	display: inline-block;
+	margin-right: 10px;
+}
+.stats td {
+	display: inline-block;
+}

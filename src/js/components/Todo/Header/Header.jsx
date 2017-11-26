@@ -1,4 +1,6 @@
 import React from 'react';
+import Stats from "../Stats/Stats";
+
 
 class Header extends React.Component {
 	constructor(props) {
@@ -7,7 +9,8 @@ class Header extends React.Component {
 
 	render() {
 		return (
-			<header>
+			<header className="todo-header">
+				<Stats todos={this.props.todos}/>
 				<h1>{this.props.title}</h1>
 			</header>
 		)
@@ -15,7 +18,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-	title: React.PropTypes.string.isRequired
+	title: React.PropTypes.string.isRequired,
+	todos: React.PropTypes.array.isRequired
 };
 
 
