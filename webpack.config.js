@@ -15,7 +15,7 @@ module.exports = {
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
-		filename: 'js/[name][hash].jsx',
+		filename: 'js/[name][hash].js',
 		sourceMapFilename: "js/[name].map"
 	},
 	module: {
@@ -34,17 +34,16 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: ['env', 'react']
-					}
+						presets: ['react', 'env', 'stage-3']
+          }
 				}
 			},
-			{
-				// test: /\.(png|svg|jpg|gif)$/,
-				test: /\.(eot|woff|woff2|svg|ttf)$/,
-				use: [
-					'file-loader'
-				]
-			},
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      },
 			{
 				test: /\.(woff|woff2)$/,
 				use: [

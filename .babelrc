@@ -3,6 +3,18 @@
 		"node_modules/**/*"
 	],
 	"presets": [
-		["env", {"modules": false}], "react"],
-	"plugins": ["syntax-dynamic-import", "transform-react-jsx"]
+		["env", {
+          "targets": {
+            "node": "current",
+            "browsers": ["last 2 versions", "safari >= 7"],
+            "modules": false
+          }
+        }],
+      "stage-3",
+      "react"
+    ],
+	"plugins": [
+		"syntax-dynamic-import",
+		"transform-react-jsx"
+	]
 }
