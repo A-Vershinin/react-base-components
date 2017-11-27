@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-//компонент в виде класса без ES6 классов
-//особенность такого синтаксиса - автоматическая привязка методов(обработчиков) к объекту
+// компонент в виде класса без ES6 классов
+// особенность такого синтаксиса - автоматическая привязка методов(обработчиков) к объекту
 // const Checkbox = React.createClass({
 // 	// указываем тип данных по умолчанию
 // 	propTypes: {
@@ -35,7 +35,7 @@ import React from 'react';
 // 	}
 // });
 
-//стандартный es6 класс
+// стандартный es6 класс
 // class Checkbox extends React.Component {
 // 	constructor(props) {
 // 		super(props);
@@ -72,16 +72,16 @@ import React from 'react';
 // нужно, мы переделаем его в функциональный вид.
 function Checkbox(props) {
 	return (
-		<button className="checkbox icon" onClick={props.onChange}>
-			<i className="material-icons">{props.checked ? 'check_box' : 'check_box_outline_blank'}</i>
-		</button>
+  <button className="checkbox icon" onClick={props.onChange}>
+    <i className="material-icons">{props.checked ? "check_box" : "check_box_outline_blank"}</i>
+  </button>
 	);
 }
 
 
 Checkbox.PropTypes = {
 	checked: React.PropTypes.bool.isRequired,
-	onChange: React.PropTypes.func.isRequired
+	onChange: React.PropTypes.func.isRequired,
 };
 
 export default Checkbox;

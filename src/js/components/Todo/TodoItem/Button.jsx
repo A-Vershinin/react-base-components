@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class Button extends React.Component {
 	constructor(props) {
@@ -7,14 +7,14 @@ class Button extends React.Component {
 
 	render() {
 		return (
-			<button className="delete icon" onClick={this.props.onClick} {...this.props}>
-				{this.props.icon ?
-					<i className="material-icons">{this.props.icon}</i>
+  <button className="delete icon" onClick={this.props.onClick} {...this.props}>
+    {this.props.icon ?
+      <i className="material-icons">{this.props.icon}</i>
 					:
 					this.props.children
 				}
-			</button>
-		)
+  </button>
+		);
 	}
 }
 
@@ -22,7 +22,7 @@ Button.propTypes = {
 	className: React.PropTypes.string,
 	icon: React.PropTypes.string,
 	onClick: React.PropTypes.func,
-	children: React.PropTypes.node
+	children: React.PropTypes.node,
 };
 
 

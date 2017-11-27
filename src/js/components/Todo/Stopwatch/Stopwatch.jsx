@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import "./stopwatch.scss";
-import Button from '../TodoItem/Button';
+import Button from "../TodoItem/Button";
 
 class Stopwatch extends React.Component {
 	constructor(props) {
@@ -8,7 +8,7 @@ class Stopwatch extends React.Component {
 		this.state = {
 			running: false,
 			elapsed: 0,
-			lastTick: 0
+			lastTick: 0,
 		};
 		this.handleStart = this.handleStart.bind(this);
 		this.handlePause = this.handlePause.bind(this);
@@ -26,57 +26,57 @@ class Stopwatch extends React.Component {
 
 	tick() {
 		if (this.state.running) {
-			let now = Date.now();
-			let diff = now - this.state.lastTick;
+			const now = Date.now();
+			const diff = now - this.state.lastTick;
 			this.setState({
 				elapsed: this.state.elapsed + diff,
-				lastTick: now
-			})
+				lastTick: now,
+			});
 		}
 	}
 
 	handleStart() {
 		this.setState({
 			running: true,
-			lastTick: Date.now()
+			lastTick: Date.now(),
 		});
-	};
+	}
 
 	handlePause() {
-		this.setState({running: false});
-	};
+		this.setState({ running: false });
+	}
 
 	handleStop() {
 		this.setState({
 			running: false,
 			elapsed: 0,
-			lastTick: 0
+			lastTick: 0,
 		});
-	};
+	}
 
 	format(millisiconds) {
-		let totalSeconds = Math.floor(millisiconds / 1000);
-		let minutes = Math.floor(totalSeconds / 60);
-		let seconds = totalSeconds % 60;
-		return `${minutes > 9 ? minutes : "0" + minutes} : ${seconds > 9 ? seconds : "0" + seconds}`;
+		const totalSeconds = Math.floor(millisiconds / 1000);
+		const minutes = Math.floor(totalSeconds / 60);
+		const seconds = totalSeconds % 60;
+		return `${minutes > 9 ? minutes : `0${minutes}`} : ${seconds > 9 ? seconds : `0${seconds}`}`;
 	}
 
 	render() {
-		let time = this.format(this.state.elapsed);
+		const time = this.format(this.state.elapsed);
 
 		return (
-			<section className="stopwatch">
-				<div className="stopwatch-time">{time}</div>
-				<div className="stopwatch-controls">
-					{this.state.running ?
-						<Button className="icon" icon="pause" onClick={this.handlePause}/>
+  <section className="stopwatch">
+    <div className="stopwatch-time">{time}</div>
+    <div className="stopwatch-controls">
+      {this.state.running ?
+        <Button className="icon" icon="pause" onClick={this.handlePause} />
 						:
-						<Button className="icon" icon="play_arrow" onClick={this.handleStart}/>
+        <Button className="icon" icon="play_arrow" onClick={this.handleStart} />
 					}
-					<Button className="icon" icon="stop" onClick={this.handleStop}/>
-				</div>
-			</section>
-		)
+      <Button className="icon" icon="stop" onClick={this.handleStop} />
+    </div>
+  </section>
+		);
 	}
 }
 

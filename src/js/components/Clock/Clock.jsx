@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 /*
 Установливаем таймер, когда Clock выводятся в DOM впервые.
 */
 class Clock extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {date: new Date()};
+		this.state = { date: new Date() };
 }
 /*
 Привязка componentDidMount() выполнятся после того, как результат
@@ -14,7 +14,7 @@ class Clock extends React.Component {
 	componentDidMount() {
 		this.timerID = setInterval(
 			() => this.tick(),
-			1000
+			1000,
 		);
 	}
 
@@ -32,16 +32,16 @@ class Clock extends React.Component {
 
 	tick() {
 		this.setState({
-			date: new Date()
+			date: new Date(),
 		});
 	}
 
 	render() {
 		return (
-			<div style={{borderBottom: "1px solid black", marginBottom: "15px"}}>
-				<h1>Hello, componentDidMount!</h1>
-				<h2>It is clock example {this.state.date.toLocaleTimeString()}.</h2>
-			</div>
+  <div style={{ borderBottom: "1px solid black", marginBottom: "15px" }}>
+    <h1>Hello, componentDidMount!</h1>
+    <h2>It is clock example {this.state.date.toLocaleTimeString()}.</h2>
+  </div>
 		);
 	}
 }

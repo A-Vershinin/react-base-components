@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import ProductCategoryRow from "./ProductCategoryRow/ProductCategoryRow.jsx";
 import ProductRow from "./ProductRow/ProductRow.jsx";
 
 
-class ProductTable  extends React.Component {
+class ProductTable extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 
 	render() {
-		let rows = [];
+		const rows = [];
 		let lastCategory = null;
 		this.props.products.forEach((product) => {
 			if (product.name.indexOf(this.props.filterText) === -1 || (!product.stocked && this.props.inStockOnly)) {
@@ -23,19 +23,18 @@ class ProductTable  extends React.Component {
 		});
 
 		return (
-			<table>
-				<thead>
-				<tr>
-					<th>Name</th>
-					<th>Price</th>
-				</tr>
-				</thead>
-				<tbody>{rows}</tbody>
-			</table>
-		)
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>{rows}</tbody>
+  </table>
+		);
 	}
 }
-
 
 
 export default ProductTable;
