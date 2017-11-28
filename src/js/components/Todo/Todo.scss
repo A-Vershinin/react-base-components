@@ -24,3 +24,31 @@
 	font-size: 20px;
 	font-weight: 700;
 }
+
+
+/* Animations */
+.slide-enter {
+	transform: translateX(-100%);
+}
+.slide-enter.slider-enter-active  {
+	transform: translateX(0);
+	transition: all 0.5s;
+}
+
+.slide-leave {
+	transform: translateX(0);
+}
+.slide-leave.slide-leave-active {
+	transform: translateX(100%);
+	transition: all 0.5s;
+}
+
+.slide-appear {
+	opacity: 0;
+}
+
+.slide-appear.slide-appear-active {
+	opacity: 1;
+	transition: all 0.5s;
+}
+

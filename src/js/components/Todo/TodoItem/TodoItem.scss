@@ -11,7 +11,10 @@ buttom {
 	justify-content: flex-start;
 	align-items: center;
 	border: 1px solid #ccc;
+	width: 100%;
 	border-bottom: transparent;
+	box-sizing: border-box;
+	transition: 0.5s;
 }
 .todo-item:last-of-type {
 	border-bottom: 1px solid #ccc;
@@ -27,6 +30,7 @@ buttom {
 	border: none;
 	outline: none;
 	cursor: pointer;
+	transition: 0.5s;
 	&:active:before {
 		content: "";
 		position: absolute;
