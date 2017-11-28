@@ -8,7 +8,7 @@ import Clock from "./components/Clock/Clock";
 import FilterableProductTable from "./components/FilterableProductTable/FilterableProductTable";
 import Todo from "./components/Todo/Todo.jsx";
 
-import todos from "./components/Todo/todo.js";
+import todos from "../../api/todo.json";
 
 const propsValues = {
   title: "Список смартфонов",
