@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "nodeserver": "node server",
     "eslint": "eslint --format node_modules/eslint-friendly-formatter ./src/js**/*.*",
     "lint:js": "eslint ./src/js/**/*.*",
     "eslintfix": "eslint ./src/js/**/*.* --fix",

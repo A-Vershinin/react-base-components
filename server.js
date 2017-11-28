@@ -12,8 +12,8 @@
 
 
   //считаем корнем нашего локального сайта папку src
-  // app.use(express.static(path.join(__dirname, "src")));
-  app.use(express.static("dist"));
+  // app.use(express.static("dist"));
+  app.use(express.static(path.join(__dirname, "src")));
 
 
   app.use(bodyParser.json());

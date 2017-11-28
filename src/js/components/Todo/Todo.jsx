@@ -8,12 +8,24 @@ import Form from "./Form/Form";
 class Todo extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { todos: this.props.initialData };
+		this.state = {
+			todos: []
+		};
 		this.handleStatusChange = this.handleStatusChange.bind(this);
 		this.handleDelete = this.handleDelete.bind(this);
 		this.handleAdd = this.handleAdd.bind(this);
 		this.handleEdit = this.handleEdit.bind(this);
-	}
+	};
+
+	// метод делает асинхронный запрос на сервер за json-файлом
+  // и забираем массив todos, обновляем стейт приложения с данными от сервера
+	componentDidMount() {
+	  fetch("/api/todos")
+	  // fetch("http://localhost:3000/api/todos")
+      .then(response => response.json())
+      .then(todos => this.setState({ todos: todos}))
+      .catch(error => console.log(error));
+  }
 
 	handleStatusChange(id) {
 		const todos = this.state.todos.map((todo) => {
@@ -31,8 +43,8 @@ class Todo extends React.Component {
 	}
 
 	nextId() {
-		this.nextId = this.nextId || 4;
-		return this.nextId += 1;
+		this._nextId = this._nextId || 4;
+		return this._nextId += 1;
 	}
 
 	handleAdd(title) {

@@ -7,7 +7,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
 	devServer: {
 		open: 'chrome',
-		port: 3000,
+		port: 3002,
+    proxy: {
+      "/api": "http://localhost:3000"
+    }
 	},
 	devtool: "source-map",
 	entry: {
