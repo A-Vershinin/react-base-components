@@ -83,7 +83,7 @@ module.exports = {
 	},
 	resolve: {
 		modules: ['node_modules'],
-		extensions: [".js", ".json", ".jsx", ".css", ".scss", ".sass"]
+		extensions: [".js", ".json", ".jsx", ".css", ".scss", ".sass", "*"]
 	},
 	plugins: [
 		new HTMLWebpackPlugin({

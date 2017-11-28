@@ -4,6 +4,7 @@ import "./Todo.scss";
 import Header from "./Header/Header";
 import TodoItem from "./TodoItem/TodoItem";
 import Form from "./Form/Form";
+import axios from "../../../../node_modules/axios/index";
 
 class Todo extends React.Component {
 	constructor(props) {
@@ -20,9 +21,10 @@ class Todo extends React.Component {
 	// метод делает асинхронный запрос на сервер за json-файлом
   // и забираем массив todos, обновляем стейт приложения с данными от сервера
 	componentDidMount() {
-	  fetch("/api/todos")
-	  // fetch("http://localhost:3000/api/todos")
-      .then(response => response.json())
+    // fetch("http://localhost:3000/api/todos") // проверяем просто что файл грузится с сервера
+    // fetch("/api/todos") // переделали на реализованный API запрос на сервере
+    axios("/api/todos") // используем axios для запросов на сервере
+      .then(response => response.data) // json() => data
       .then(todos => this.setState({ todos: todos}))
       .catch(error => console.log(error));
   }
